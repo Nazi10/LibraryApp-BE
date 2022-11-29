@@ -25,8 +25,6 @@ builder.Services.AddCors(c =>
             });
     }
 );
-
-
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -77,8 +75,7 @@ builder.Services.AddScoped<IRoleService, RoleService>();
 #endregion
 
 builder.Services.AddDbContext<LibraryContext>(config =>
-    config.UseNpgsql(builder.Configuration.GetConnectionString("LibraryDatabase")));
-
+    config.UseNpgsql(builder.Configuration.GetConnectionString("LIBRARY_DB")));
 
 builder.Services.AddIdentityInfrastructure(builder.Configuration);
 
